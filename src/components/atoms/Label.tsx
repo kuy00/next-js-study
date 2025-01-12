@@ -1,0 +1,14 @@
+import { JSX } from "react";
+
+type LabelProps = {
+  children: JSX.Element | string;
+  className?: string;
+};
+
+const Label = (props: LabelProps) => {
+  const { children, className = "" } = props;
+
+  return <label className={className}>{children}</label>;
+};
+
+export default Label;
