@@ -11,7 +11,10 @@ const InputField = (props: InputFieldProps) => {
   return (
     <div className="flex justify-between">
       <Label className="mr-5 text-lg">{label}</Label>
-      <Input {...inputProps} className={`${inputProps.className ?? ""} h-10`} />
+      <Input
+        {...inputProps}
+        className={`${inputProps.className ?? ""} h-10 text-black`}
+      />
     </div>
   );
 };

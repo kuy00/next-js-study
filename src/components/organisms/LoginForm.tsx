@@ -1,13 +1,30 @@
+"use client";
+
+import { useLogin } from "@/hooks/useLogin";
 import Button from "../atoms/Button";
 import Text from "../atoms/Text";
 import InputField from "../molecules/InputField";
 
 const LoginForm = () => {
+  const { id, pw, onSubmit } = useLogin();
+
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <div className="flex flex-col justify-between h-28 mb-4">
-        <InputField label="ID" type="text" />
-        <InputField label="PW" type="password" />
+        <InputField
+          label="ID"
+          type="text"
+          placeholder="id"
+          value={id.value}
+          onChange={id.handleChange}
+        />
+        <InputField
+          label="PW"
+          type="password"
+          placeholder="password"
+          value={pw.value}
+          onChange={pw.handleChange}
+        />
       </div>
 
       <div className="px-5">
