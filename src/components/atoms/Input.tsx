@@ -6,6 +6,7 @@ export type InputProps = {
   value?: string;
   placeholder?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  autoFocus?: boolean;
 };
 
 const Input = (props: InputProps) => {
@@ -15,6 +16,7 @@ const Input = (props: InputProps) => {
     value = "",
     placeholder = "",
     onChange,
+    autoFocus = false,
   } = props;
 
   return (
@@ -24,6 +26,7 @@ const Input = (props: InputProps) => {
       value={value}
       placeholder={placeholder}
       onChange={onChange}
+      autoFocus={autoFocus}
     />
   );
 };
