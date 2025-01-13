@@ -1,6 +1,6 @@
 import { HTTPError } from "ky";
 import apiClient from "../../../../utils/apiClient";
-import { TokenInfo } from "@/types/api/users";
+import { TokenInfo } from "@/types/api/auth";
 
 export const GET = async () => {
   return Response.json("test");

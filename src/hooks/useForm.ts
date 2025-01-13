@@ -1,5 +1,6 @@
 import { FormEvent } from "react";
 import { useInput } from "./useInput";
+import { TokenInfo } from "@/types/api/auth";
 
 export const useForm = () => {
   const id = useInput();
@@ -14,8 +15,11 @@ export const useForm = () => {
         password: pw.value,
       }),
     });
-    const token = await data.json();
-    console.log(token);
+    const tokenInfo: TokenInfo = await data.json();
+
+    console.log(tokenInfo);
+
+    location.href = "/user";
   };
 
   return {
