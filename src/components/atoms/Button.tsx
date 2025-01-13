@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import { JSX, memo } from "react";
 
 type ButtonProps = {
   children: JSX.Element;
@@ -16,4 +16,4 @@ const Button = (props: ButtonProps) => {
   );
 };
 
-export default Button;
+export default memo(Button);

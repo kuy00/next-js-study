@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import { JSX, memo } from "react";
 
 type TextProps = {
   children: JSX.Element | string;
@@ -11,4 +11,4 @@ const Text = (props: TextProps) => {
   return <span className={className}>{children}</span>;
 };
 
-export default Text;
+export default memo(Text);

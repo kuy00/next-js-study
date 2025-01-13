@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import { JSX, memo } from "react";
 
 type LabelProps = {
   children: JSX.Element | string;
@@ -11,4 +11,4 @@ const Label = (props: LabelProps) => {
   return <label className={className}>{children}</label>;
 };
 
-export default Label;
+export default memo(Label);

@@ -1,12 +1,11 @@
 "use client";
 
-import { useLogin } from "@/hooks/useLogin";
-import Button from "../atoms/Button";
-import Text from "../atoms/Text";
+import { useForm } from "@/hooks/useForm";
 import InputField from "../molecules/InputField";
+import ButtonInnerText from "../molecules/ButtonInnerText";
 
 const LoginForm = () => {
-  const { id, pw, onSubmit } = useLogin();
+  const { id, pw, onSubmit } = useForm();
 
   return (
     <form onSubmit={onSubmit}>
@@ -17,6 +16,7 @@ const LoginForm = () => {
           placeholder="id"
           value={id.value}
           onChange={id.handleChange}
+          autoFocus={true}
         />
         <InputField
           label="PW"
@@ -28,9 +28,11 @@ const LoginForm = () => {
       </div>
 
       <div className="px-5">
-        <Button className="w-full bg-white rounded-md">
-          <Text className="text-2xl text-black">Login</Text>
-        </Button>
+        <ButtonInnerText
+          text="login"
+          buttonClassName="w-full bg-white rounded-md"
+          textClassName="text-2xl text-black"
+        />
       </div>
     </form>
   );

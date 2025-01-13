@@ -1,4 +1,4 @@
-import { ChangeEventHandler } from "react";
+import { ChangeEventHandler, memo } from "react";
 
 export type InputProps = {
   className?: string;
@@ -31,4 +31,4 @@ const Input = (props: InputProps) => {
   );
 };
 
-export default Input;
+export default memo(Input);

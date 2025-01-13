@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Input, { InputProps } from "../atoms/Input";
 import Label from "../atoms/Label";
 
@@ -19,4 +20,4 @@ const InputField = (props: InputFieldProps) => {
   );
 };
 
-export default InputField;
+export default memo(InputField);
