@@ -1,5 +1,6 @@
 import { HTTPError } from "ky";
 import apiClient from "../../../../utils/apiClient";
+import { TokenInfo } from "@/types/api/users";
 
 export const GET = async () => {
   return Response.json("test");
@@ -13,7 +14,7 @@ export const POST = async (request: Request) => {
       .post("login", {
         json: body,
       })
-      .json();
+      .json<TokenInfo>();
     return Response.json(data);
   } catch (error) {
     if (error instanceof HTTPError) {
