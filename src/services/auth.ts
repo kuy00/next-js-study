@@ -1,3 +1,4 @@
+import { TokenInfoInterface } from "@/types/api/auth";
 import apiClient from "@/utils/apiClient";
 import { HTTPError } from "ky";
 
@@ -7,7 +8,7 @@ export const login = async (loginForm: { email: string; password: string }) => {
       .post("login", {
         json: loginForm,
       })
-      .json();
+      .json<TokenInfoInterface>();
 
     return Response.json(data);
   } catch (error) {

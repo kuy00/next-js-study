@@ -1,6 +1,7 @@
 import { FormEvent } from "react";
 import { useInput } from "./useInput";
-import { TokenInfo } from "@/types/api/auth";
+import { deserialize } from "@/utils/jsonSerializer";
+import TokenInfo from "@/models/tokenInfo";
 
 export const useLogin = () => {
   const id = useInput();
@@ -16,11 +17,11 @@ export const useLogin = () => {
           password: pw.value,
         }),
       });
-      const tokenInfo: TokenInfo = await data.json();
+      const tokenInfo = deserialize(await data.json(), TokenInfo);
 
       console.log(tokenInfo);
 
-      // location.href = "/user";
+      location.href = "/user";
     } catch (error) {
       console.log(error);
     }
