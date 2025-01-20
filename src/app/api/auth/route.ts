@@ -1,4 +1,4 @@
-import { login } from "@/apis/auth";
+import { login } from "@/services/auth";
 
 export const POST = async (request: Request) => {
   try {

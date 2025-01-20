@@ -1,6 +1,6 @@
 "use client";
 
-import { getusers } from "@/apis/user";
+import { getusers } from "@/services/user";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import Text from "../atoms/Text";
 
