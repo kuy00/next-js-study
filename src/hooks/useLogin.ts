@@ -2,7 +2,7 @@ import { FormEvent } from "react";
 import { useInput } from "./useInput";
 import { TokenInfo } from "@/types/api/auth";
 
-export const useForm = () => {
+export const useLogin = () => {
   const id = useInput();
   const pw = useInput();
 

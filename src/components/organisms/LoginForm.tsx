@@ -1,11 +1,11 @@
 "use client";
 
-import { useForm } from "@/hooks/useForm";
+import { useLogin } from "@/hooks/useLogin";
 import InputField from "../molecules/InputField";
 import ButtonInnerText from "../molecules/ButtonInnerText";
 
 const LoginForm = () => {
-  const { id, pw, onSubmit } = useForm();
+  const { id, pw, onSubmit } = useLogin();
 
   return (
     <form onSubmit={onSubmit}>
