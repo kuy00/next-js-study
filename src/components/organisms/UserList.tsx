@@ -1,14 +1,8 @@
-"use client";
-
-import { getusers } from "@/services/user";
-import { useSuspenseQuery } from "@tanstack/react-query";
+import { getUsers } from "@/services/user";
 import Text from "../atoms/Text";
 
-const UserList = () => {
-  const users = useSuspenseQuery({
-    queryKey: ["users"],
-    queryFn: getusers,
-  });
+const UserList = async () => {
+  const users = await getUsers();
 
   return <Text>{JSON.stringify(users)}</Text>;
 };
