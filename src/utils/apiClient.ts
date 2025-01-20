@@ -8,9 +8,9 @@ const apiClient = ky.create({
   },
   hooks: {
     beforeRequest: [
-      (request) => {
+      (request, options) => {
         if (process.env.NODE_ENV !== "production") {
-          console.log("before request", request);
+          console.log("before request", options);
         }
       },
     ],

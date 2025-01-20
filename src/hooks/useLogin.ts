@@ -8,18 +8,22 @@ export const useLogin = () => {
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    const data = await fetch("user/api", {
-      method: "POST",
-      body: JSON.stringify({
-        email: id.value,
-        password: pw.value,
-      }),
-    });
-    const tokenInfo: TokenInfo = await data.json();
+    try {
+      const data = await fetch("api/auth", {
+        method: "POST",
+        body: JSON.stringify({
+          email: id.value,
+          password: pw.value,
+        }),
+      });
+      const tokenInfo: TokenInfo = await data.json();
 
-    console.log(tokenInfo);
+      console.log(tokenInfo);
 
-    location.href = "/user";
+      // location.href = "/user";
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return {
