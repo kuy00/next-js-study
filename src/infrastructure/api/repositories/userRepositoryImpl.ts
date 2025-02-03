@@ -1,6 +1,6 @@
 import { UserList } from "@/domain/entities/user";
 import UserRepository from "@/domain/repositories/userRepository";
-import apiClient from "../apiClient";
+import apiClient from "../clients/apiClient";
 import { HTTPError } from "ky";
 import { errorResponseSchema } from "@/domain/entities/errorResponse";
 

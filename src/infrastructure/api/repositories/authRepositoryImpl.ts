@@ -1,5 +1,5 @@
 import AuthRepository from "@/domain/repositories/authRepository";
-import apiClient from "../apiClient";
+import apiClient from "../clients/apiClient";
 import { Auth } from "@/domain/entities/auth";
 import { errorResponseSchema } from "@/domain/entities/errorResponse";
 import { HTTPError } from "ky";
