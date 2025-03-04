@@ -10,7 +10,7 @@ const SearchButton = ({ fetch }: { fetch: () => Promise<object> }) => {
   };
 
   return (
-    <Button className="w-full bg-white rounded-md" onClick={search}>
+    <Button className="w-20 bg-white rounded-md" onClick={search}>
       <Text className="text-2xl text-black">검색</Text>
     </Button>
   );
